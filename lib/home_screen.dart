@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/tabs/ahades_tab.dart';
 import 'package:islami_app/tabs/quran_tab.dart';
@@ -39,14 +40,17 @@ class _HomeScreenState extends State<HomeScreen> {
           elevation: 0,
           backgroundColor: Colors.transparent,
           centerTitle: true,
-          title: Text('islami', style: Theme.of(context).textTheme.bodyLarge),
+          title: Text(
+            'islami',
+            style: GoogleFonts.elMessiri(
+              fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black),
+          ),
         ),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: CurrentIndex,
           onTap: (value) {
             CurrentIndex = value;
-            setState(() {
-            });
+            setState(() {});
           },
           items: const [
             BottomNavigationBarItem(
@@ -90,7 +94,6 @@ class _HomeScreenState extends State<HomeScreen> {
           // fixedColor: Color(0xffB7935F),
         ),
         body: tabs[CurrentIndex],
-        
       )
     ]);
   }
