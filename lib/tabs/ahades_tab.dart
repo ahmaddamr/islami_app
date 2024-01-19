@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:islami_app/ahadeth_details.dart';
 import 'package:islami_app/models/hadeth_model.dart';
 
 class ahadesTab extends StatelessWidget {
@@ -90,10 +91,17 @@ class ahadesTab extends StatelessWidget {
               );
             },
             itemBuilder: (context, index) {
-              return Center(child: Text(hadethNum[index],style: GoogleFonts.elMessiri(
-                fontSize: 17,
-                fontWeight: FontWeight.bold
-              ),));
+              return Center(child: InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, AhadethDetails.id,
+                  // arguments: hadethData[index]
+                  );
+                },
+                child: Text(hadethNum[index],style: GoogleFonts.elMessiri(
+                  fontSize: 17,
+                  fontWeight: FontWeight.bold
+                ),),
+              ));
             },
             itemCount: hadethNum.length,
           ),
@@ -101,17 +109,5 @@ class ahadesTab extends StatelessWidget {
       ],
     );
   }
-  // void hadethLoad()
-  // async{
-  //   String file =await rootBundle!.loadString('assets/ahades.txt');
-  //   List<String> ahadeth = [] ;
-  //   for (var i = 0; i < ahadeth.length; i++) {
-  //     List<String> lines =  ahadeth[i].split('\n');
-  //   String title = lines[0];
-  //   print(title);
-  //   lines.removeAt(0);
-  //   List<String> hadethContent = lines ;
-  //   hadethData.add(hadethModel(hadethContent, title));
-  //   }
-  // }
+ 
 }

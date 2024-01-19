@@ -1,5 +1,5 @@
 class hadethModel {
-  String name ;
+  int name ;
   List<String> content ;
   hadethModel(this.content,this.name);
 }
