@@ -6,10 +6,11 @@ class MyThemeData {
   static ThemeData lightTheme = ThemeData(
       scaffoldBackgroundColor: Colors.transparent,
       appBarTheme: AppBarTheme(
-        centerTitle: true,
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-      ),
+          centerTitle: true,
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          titleTextStyle: GoogleFonts.elMessiri(
+              fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black)),
       textTheme: TextTheme(
           bodyLarge: GoogleFonts.elMessiri(
               fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black),

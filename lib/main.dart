@@ -20,6 +20,7 @@ class IslamiApp extends StatelessWidget {
       routes: {
         HomeScreen.id: (context) => HomeScreen(),
         SurahDetails.id:(context) => SurahDetails(),
+
       },
       debugShowCheckedModeBanner: false,
       

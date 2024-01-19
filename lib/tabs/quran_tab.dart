@@ -127,68 +127,6 @@ class QuranTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return
-        // Stack(
-        //   children: [
-        //     Image.asset(
-        //       'assets/images/bg3.png',
-        //       width: double.infinity,
-        //       fit: BoxFit.fill,
-        //     ),
-        //     Scaffold(
-        //       backgroundColor: Colors.transparent,
-        //       appBar: AppBar(
-        //         elevation: 0,
-        //         backgroundColor: Colors.transparent,
-        //         centerTitle: true,
-        //         title: Text('islami',
-        //             style: Theme.of(context).textTheme.bodyLarge ),
-        //       ),
-        //       bottomNavigationBar: BottomNavigationBar(
-        //         currentIndex: CurrentIndex,
-        //         onTap: (value)
-        //         {
-        //           CurrentIndex = value ;
-        //           // setState(() {
-
-        //           // });
-        //         },
-        //         items: const[
-        //           BottomNavigationBarItem(
-        //               icon: ImageIcon(
-        //                 AssetImage('assets/images/quran.png'),
-        //                 size: 30,
-        //               ),backgroundColor: MyThemeData.primaryColor,
-        //               label: 'quran'),
-        //           BottomNavigationBarItem(
-        //               icon: ImageIcon(
-        //                 AssetImage('assets/images/ahades.png'),
-        //                 size: 30,
-        //               ),backgroundColor: MyThemeData.primaryColor,
-        //               label: 'ahades'),
-        //           BottomNavigationBarItem(
-        //               icon: ImageIcon(
-        //                 AssetImage('assets/images/sebha.png'),
-        //                 size: 30,
-        //               ),backgroundColor: MyThemeData.primaryColor,
-        //               label: 'sebha'),
-        //           BottomNavigationBarItem(
-        //               icon: ImageIcon(
-        //                 AssetImage('assets/images/radio.png'),
-        //                 size: 30,
-        //               ),backgroundColor: MyThemeData.primaryColor,
-        //               label: 'radio'),
-        //           BottomNavigationBarItem(
-        //               icon: Icon(
-        //                 Icons.settings,
-        //                 size: 30,
-        //               ),backgroundColor: MyThemeData.primaryColor,
-        //               label: 'settings'),
-        //         ],
-        //         selectedItemColor: Colors.black,
-        //         backgroundColor: Color(0xffB7935F),
-        //         // fixedColor: Color(0xffB7935F),
-        //       ),
-        // body:
         Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [

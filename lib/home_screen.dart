@@ -21,9 +21,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List<Widget> tabs = [
     QuranTab(),
-    radioTab(),
     ahadesTab(),
     sebhaTab(),
+    radioTab(),
     settingsTab()
   ];
   @override
@@ -41,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
           backgroundColor: Colors.transparent,
           centerTitle: true,
           title: Text(
-            'islami',
+            'اسلامي',
             style: GoogleFonts.elMessiri(
               fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black),
           ),
