@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:islami_app/models/surah_model.dart';
 import 'package:islami_app/surah_details.dart';
 import 'package:islami_app/theme.dart';
 
@@ -225,7 +226,8 @@ class QuranTab extends StatelessWidget {
                 child: InkWell(
                   onTap: ()
                   {
-                    Navigator.pushNamed(context, SurahDetails.id);
+                    Navigator.pushNamed(context, SurahDetails.id,
+                    arguments: SuraModel(index, SuraName[index]));
                   },
                   child: Text(
                     SuraName[index],
