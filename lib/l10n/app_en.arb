@@ -1,5 +1,8 @@
 {
   "appTitle": "islami",
+  "suraName": "Sura Name",
+  "hadeth": "Hadeth",
+  "setting": "Setting",
   "@helloWorld": {
     "description": "The conventional newborn programmer greeting"
   }

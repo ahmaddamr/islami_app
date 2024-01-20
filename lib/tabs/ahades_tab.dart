@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/screens/ahadeth_details.dart';
 import 'package:islami_app/models/hadeth_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ahadesTab extends StatelessWidget {
   // const ahadesTab({super.key});
@@ -72,7 +73,7 @@ class ahadesTab extends StatelessWidget {
           color: Color(0xffB7935F),
         ),
         Text(
-          'أحاديث',
+          AppLocalizations.of(context)!.hadeth,
           style:
               GoogleFonts.elMessiri(fontWeight: FontWeight.bold, fontSize: 20),
         ),
@@ -109,5 +110,5 @@ class ahadesTab extends StatelessWidget {
       ],
     );
   }
- 
+  
 }

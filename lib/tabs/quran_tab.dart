@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/models/surah_model.dart';
 import 'package:islami_app/screens/surah_details.dart';
 import 'package:islami_app/theme.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuranTab extends StatelessWidget {
   // const QuranTab({super.key});
@@ -126,8 +127,7 @@ class QuranTab extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return
-        Column(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Center(child: Image.asset('assets/images/main_ic.png')),
@@ -139,10 +139,10 @@ class QuranTab extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Sura Names',
+              AppLocalizations.of(context)!.suraName,
               style: GoogleFonts.elMessiri(
                   fontWeight: FontWeight.bold, fontSize: 20),
-            )
+            ),
           ],
         ),
         const Divider(
@@ -162,10 +162,9 @@ class QuranTab extends StatelessWidget {
             itemBuilder: (context, index) {
               return Center(
                 child: InkWell(
-                  onTap: ()
-                  {
+                  onTap: () {
                     Navigator.pushNamed(context, SurahDetails.id,
-                    arguments: SuraModel(index, SuraName[index]));
+                        arguments: SuraModel(index, SuraName[index]));
                   },
                   child: Text(
                     SuraName[index],

@@ -42,7 +42,7 @@ class _SurahDetailsState extends State<SurahDetails> {
           ),
           body: ListView.separated(
             separatorBuilder: (context, index) {
-              return Divider(
+              return const Divider(
                 color: MyThemeData.primaryColor,
               );
             },
