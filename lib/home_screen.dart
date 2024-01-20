@@ -74,20 +74,20 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 backgroundColor: MyThemeData.primaryColor,
                 label: 'sebha'),
-            BottomNavigationBarItem(
-                icon: ImageIcon(
-                  AssetImage('assets/images/radio.png'),
-                  size: 30,
-                ),
-                backgroundColor: MyThemeData.primaryColor,
-                label: 'radio'),
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.settings,
-                  size: 30,
-                ),
-                backgroundColor: MyThemeData.primaryColor,
-                label: 'settings'),
+            // BottomNavigationBarItem(
+            //     icon: ImageIcon(
+            //       AssetImage('assets/images/radio.png'),
+            //       size: 30,
+            //     ),
+            //     backgroundColor: MyThemeData.primaryColor,
+            //     label: 'radio'),
+            // BottomNavigationBarItem(
+            //     icon: Icon(
+            //       Icons.settings,
+            //       size: 30,
+            //     ),
+            //     backgroundColor: MyThemeData.primaryColor,
+            //     label: 'settings'),
           ],
           selectedItemColor: Colors.black,
           backgroundColor: Color(0xffB7935F),
