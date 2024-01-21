@@ -34,6 +34,7 @@ class IslamiApp extends StatelessWidget {
       ],
       theme: MyThemeData.lightTheme,
       darkTheme: MyThemeData.darkTheme,
+      themeMode: provider.themeMode,
       initialRoute: HomeScreen.id,
       routes: {
         HomeScreen.id: (context) => HomeScreen(),
