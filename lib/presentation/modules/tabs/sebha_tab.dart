@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class sebhaTab extends StatefulWidget {
   // const sebhaTab({super.key});
@@ -22,7 +23,7 @@ class _sebhaTabState extends State<sebhaTab> {
               const SizedBox(
                 height: 10,
               ),
-              Text('عدد التسبيحات',
+              Text(AppLocalizations.of(context)!.numberoftasbeeh,
               style: GoogleFonts.elMessiri(
                 fontSize: 20,
                 fontWeight: FontWeight.bold

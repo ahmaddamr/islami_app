@@ -3,6 +3,7 @@
   "suraName": "Sura Name",
   "hadeth": "Hadeth",
   "setting": "Setting",
+  "numberoftasbeeh": "NumberOfTasbeh",
   "@helloWorld": {
     "description": "The conventional newborn programmer greeting"
   }

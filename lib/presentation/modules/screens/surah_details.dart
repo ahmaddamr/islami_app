@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:islami_app/models/surah_model.dart';
-import 'package:islami_app/tabs/quran_tab.dart';
-import 'package:islami_app/theme.dart';
+import 'package:islami_app/core/theme.dart';
+import 'package:islami_app/data/models/surah_model.dart';
+import 'package:islami_app/presentation/modules/tabs/quran_tab.dart';
 
 class SurahDetails extends StatefulWidget {
   // const SurahDetails({super.key});

@@ -3,6 +3,7 @@
   "suraName": "اسم السوره",
   "hadeth": "الحديث",
   "setting": "الاعدادات",
+  "numberoftasbeeh": "عدد التسبيحات",
   "@helloWorld": {
     "description": "The conventional newborn programmer greeting"
   }

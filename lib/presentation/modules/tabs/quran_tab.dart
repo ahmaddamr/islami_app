@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:islami_app/models/surah_model.dart';
-import 'package:islami_app/screens/surah_details.dart';
-import 'package:islami_app/theme.dart';
+import 'package:islami_app/data/models/surah_model.dart';
+import 'package:islami_app/presentation/modules/screens/surah_details.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami_app/provider/my_provider.dart';
+import 'package:provider/provider.dart';
 
 class QuranTab extends StatelessWidget {
   // const QuranTab({super.key});
@@ -125,8 +126,125 @@ class QuranTab extends StatelessWidget {
     "الفلق",
     "الناس"
   ];
+  List<String> suraNameEnglish = [
+    "Al-Fatiha",
+    "Al-Baqarah",
+    "Aal-E-Imran",
+    "An-Nisa'",
+    "Al-Ma'idah",
+    "Al-An'am",
+    "Al-A'raf",
+    "Al-Anfal",
+    "At-Tawbah",
+    "Yunus",
+    "Hud",
+    "Yusuf",
+    "Ar-Ra'd",
+    "Ibrahim",
+    "Al-Hijr",
+    "An-Nahl",
+    "Al-Isra",
+    "Al-Kahf",
+    "Maryam",
+    "Ta-Ha",
+    "Al-Anbiya",
+    "Al-Hajj",
+    "Al-Mu'minun",
+    "An-Nur",
+    "Al-Furqan",
+    "Ash-Shu'ara",
+    "An-Naml",
+    "Al-Qasas",
+    "Al-Ankabut",
+    "Ar-Rum",
+    "Luqman",
+    "As-Sajda",
+    "Al-Ahzab",
+    "Saba",
+    "Fatir",
+    "Ya-Sin",
+    "As-Saffat",
+    "Sad",
+    "Az-Zumar",
+    "Ghafir",
+    "Fussilat",
+    "Ash-Shura",
+    "Az-Zukhruf",
+    "Ad-Dukhan",
+    "Al-Jathiya",
+    "Al-Ahqaf",
+    "Muhammad",
+    "Al-Fath",
+    "Al-Hujurat",
+    "Qaf",
+    "Adh-Dhariyat",
+    "At-Tur",
+    "An-Najm",
+    "Al-Qamar",
+    "Ar-Rahman",
+    "Al-Waqi'a",
+    "Al-Hadid",
+    "Al-Mujadila",
+    "Al-Hashr",
+    "Al-Mumtahina",
+    "As-Saff",
+    "Al-Jumu'a",
+    "Al-Munafiqun",
+    "At-Taghabun",
+    "At-Talaq",
+    "At-Tahrim",
+    "Al-Mulk",
+    "Al-Qalam",
+    "Al-Haqqah",
+    "Al-Ma'arij",
+    "Nuh",
+    "Al-Jinn",
+    "Al-Muzzammil",
+    "Al-Muddathir",
+    "Al-Qiyamah",
+    "Al-Insan",
+    "Al-Mursalat",
+    "An-Naba'",
+    "An-Nazi'at",
+    "Abasa",
+    "At-Takwir",
+    "Al-Infitar",
+    "Al-Mutaffifin",
+    "Al-Inshiqaq",
+    "Al-Buruj",
+    "At-Tariq",
+    "Al-A'la",
+    "Al-Ghashiyah",
+    "Al-Fajr",
+    "Al-Balad",
+    "Ash-Shams",
+    "Al-Lail",
+    "Ad-Duha",
+    "Ash-Sharh",
+    "At-Tin",
+    "Al-Alaq",
+    "Al-Qadr",
+    "Al-Bayyina",
+    "Az-Zalzalah",
+    "Al-Adiyat",
+    "Al-Qari'a",
+    "At-Takathur",
+    "Al-Asr",
+    "Al-Humazah",
+    "Al-Fil",
+    "Quraysh",
+    "Al-Ma'un",
+    "Al-Kawthar",
+    "Al-Kafirun",
+    "An-Nasr",
+    "Al-Masad",
+    "Al-Ikhlas",
+    "Al-Falaq",
+    "An-Nas"
+  ];
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<MyProvider>(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -167,7 +285,9 @@ class QuranTab extends StatelessWidget {
                         arguments: SuraModel(index, SuraName[index]));
                   },
                   child: Text(
-                    SuraName[index],
+                    provider.language == 'ar'
+                        ? SuraName[index]
+                        : suraNameEnglish[index],
                     style: GoogleFonts.elMessiri(
                         fontWeight: FontWeight.bold, fontSize: 17),
                   ),

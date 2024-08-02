@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:islami_app/tabs/ahades_tab.dart';
-import 'package:islami_app/tabs/quran_tab.dart';
-import 'package:islami_app/tabs/radio_tab.dart';
-import 'package:islami_app/tabs/sebha_tab.dart';
-import 'package:islami_app/tabs/settings_tab.dart';
-import 'package:islami_app/theme.dart';
+import 'package:islami_app/core/theme.dart';
+import 'package:islami_app/presentation/modules/tabs/ahades_tab.dart';
+import 'package:islami_app/presentation/modules/tabs/quran_tab.dart';
+import 'package:islami_app/presentation/modules/tabs/radio_tab.dart';
+import 'package:islami_app/presentation/modules/tabs/sebha_tab.dart';
+import 'package:islami_app/presentation/modules/tabs/settings_tab.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeScreen extends StatefulWidget {
   // const HomeScreen({super.key});
@@ -23,8 +23,8 @@ class _HomeScreenState extends State<HomeScreen> {
     QuranTab(),
     ahadesTab(),
     sebhaTab(),
-    radioTab(),
-    settingsTab()
+    const radioTab(),
+    const settingsTab()
   ];
   @override
   Widget build(BuildContext context) {
@@ -41,9 +41,9 @@ class _HomeScreenState extends State<HomeScreen> {
           backgroundColor: Colors.transparent,
           centerTitle: true,
           title: Text(
-            'اسلامي',
+            AppLocalizations.of(context)!.appTitle,
             style: GoogleFonts.elMessiri(
-              fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black),
+                fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black),
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(
@@ -90,7 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 label: 'settings'),
           ],
           selectedItemColor: Colors.black,
-          backgroundColor: Color(0xffB7935F),
+          // backgroundColor: MyThemeData.primaryColor,
           // fixedColor: Color(0xffB7935F),
         ),
         body: tabs[CurrentIndex],
