@@ -13,6 +13,7 @@ class settingsTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<MyProvider>(context);
+    var color = provider.isDarkMode ? Colors.white : Colors.black;
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
@@ -20,7 +21,7 @@ class settingsTab extends StatelessWidget {
         children: [
           Text(provider.language == 'ar' ? 'اللغه:' : 'language:',
               style: GoogleFonts.elMessiri(
-                  fontSize: 30, fontWeight: FontWeight.bold)),
+                  fontSize: 30, fontWeight: FontWeight.bold,color: color)),
           InkWell(
             onTap: () {
               showBottomSheetLanguage(context);
@@ -31,10 +32,10 @@ class settingsTab extends StatelessWidget {
               width: double.infinity,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  border: Border.all(color: MyThemeData.primaryColor)),
+                  border: Border.all(color: MyThemeData.primaryColor,)),
               child: Text(provider.language == 'ar' ? 'العربيه' : 'English',
                   style: GoogleFonts.elMessiri(
-                      fontSize: 30, fontWeight: FontWeight.bold)),
+                      fontSize: 30, fontWeight: FontWeight.bold,color: color)),
             ),
           ),
           const SizedBox(
@@ -42,7 +43,7 @@ class settingsTab extends StatelessWidget {
           ),
           Text(provider.language == 'ar' ? 'السمه' : 'theme:',
               style: GoogleFonts.elMessiri(
-                  fontSize: 30, fontWeight: FontWeight.bold)),
+                  fontSize: 30, fontWeight: FontWeight.bold,color: color)),
           InkWell(
             onTap: () {
               showBottomSheetTheme(context);
@@ -56,7 +57,7 @@ class settingsTab extends StatelessWidget {
                   border: Border.all(color: MyThemeData.primaryColor)),
               child: Text('Light',
                   style: GoogleFonts.elMessiri(
-                      fontSize: 30, fontWeight: FontWeight.bold)),
+                      fontSize: 30, fontWeight: FontWeight.bold,color: color)),
             ),
           )
         ],
@@ -66,6 +67,7 @@ class settingsTab extends StatelessWidget {
 
   showBottomSheetLanguage(BuildContext context) {
     return showModalBottomSheet(
+      showDragHandle: true,
         context: context,
         builder: (context) {
           return const BottomSheetLang();

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:islami_app/core/theme.dart';
 import 'package:islami_app/data/models/surah_model.dart';
 import 'package:islami_app/presentation/modules/screens/surah_details.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -245,6 +246,8 @@ class QuranTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<MyProvider>(context);
+    var color = provider.isDarkMode ? Colors.white : Colors.black;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -259,7 +262,7 @@ class QuranTab extends StatelessWidget {
             Text(
               AppLocalizations.of(context)!.suraName,
               style: GoogleFonts.elMessiri(
-                  fontWeight: FontWeight.bold, fontSize: 20),
+                  fontWeight: FontWeight.bold, fontSize: 20, color: color),
             ),
           ],
         ),
@@ -289,7 +292,9 @@ class QuranTab extends StatelessWidget {
                         ? SuraName[index]
                         : suraNameEnglish[index],
                     style: GoogleFonts.elMessiri(
-                        fontWeight: FontWeight.bold, fontSize: 17),
+                        fontSize: 25,
+                        fontWeight: FontWeight.w600,
+                        color: color),
                   ),
                 ),
               );

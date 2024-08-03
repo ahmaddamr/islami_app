@@ -9,51 +9,23 @@ class BottomSheetTheme extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<MyProvider>(context);
+    
+    var color = provider.isDarkMode ? Colors.white : Colors.black;
     return Container(
       padding: const EdgeInsets.all(15),
       child: Column(
-        // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Row(
-            // mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Light', style: MyThemeData.lightTheme.textTheme.bodyLarge),
+              Text(provider.isDarkMode ? 'Dark Mode' : 'Light Mode',),
               const SizedBox(
-                width: 30,
+                width: 20,
               ),
-              IconButton(
-                onPressed: () {
-                  provider.changeTheme(ThemeMode.light);
+              Switch(
+                value: provider.isDarkMode,
+                onChanged: (value) {
+                  provider.toggleTheme(value);
                 },
-                icon: Icon(
-                  Icons.done_outline_rounded,
-                  color: provider.themeMode == ThemeMode.light
-                      ? MyThemeData.primaryColor
-                      : MyThemeData.SecondColor,
-                ),
-              )
-            ],
-          ),
-          const Divider(
-            thickness: 1,
-            color: MyThemeData.primaryColor,
-          ),
-          Row(
-            children: [
-              Text('Dark', style: MyThemeData.lightTheme.textTheme.bodyLarge),
-              const SizedBox(
-                width: 42,
-              ),
-              IconButton(
-                onPressed: () {
-                  provider.changeTheme(ThemeMode.dark);
-                },
-                icon: Icon(
-                  Icons.done_outline_rounded,
-                  color: provider.themeMode == ThemeMode.dark
-                      ? MyThemeData.primaryColor
-                      : MyThemeData.SecondColor,
-                ),
               )
             ],
           )
@@ -62,3 +34,51 @@ class BottomSheetTheme extends StatelessWidget {
     );
   }
 }
+// Column(
+//         // crossAxisAlignment: CrossAxisAlignment.center,
+//         children: [
+//           Row(
+//             // mainAxisAlignment: MainAxisAlignment.center,
+//             children: [
+//               Text('Light', style: MyThemeData.lightTheme.textTheme.bodyLarge),
+//               const SizedBox(
+//                 width: 30,
+//               ),
+//               IconButton(
+//                 onPressed: (value) {
+//                   provider.toggleTheme(value);
+//                 },
+//                 icon: Icon(
+//                   Icons.done_outline_rounded,
+//                   color: provider.themeMode == ThemeMode.light
+//                       ? MyThemeData.primaryColor
+//                       : MyThemeData.SecondColor,
+//                 ),
+//               )
+//             ],
+//           ),
+//           const Divider(
+//             thickness: 1,
+//             color: MyThemeData.primaryColor,
+//           ),
+//           Row(
+//             children: [
+//               Text('Dark', style: MyThemeData.lightTheme.textTheme.bodyLarge),
+//               const SizedBox(
+//                 width: 42,
+//               ),
+//               IconButton(
+//                 onPressed: () {
+//                   provider.changeTheme(ThemeMode.dark);
+//                 },
+//                 icon: Icon(
+//                   Icons.done_outline_rounded,
+//                   color: provider.themeMode == ThemeMode.dark
+//                       ? MyThemeData.primaryColor
+//                       : MyThemeData.SecondColor,
+//                 ),
+//               )
+//             ],
+//           )
+//         ],
+//       ),

@@ -17,11 +17,12 @@ class AhadethDetails extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
       ),
+      // body: ,
     );
   }
 
   void hadethLoad(int index) async {
-    String file = await rootBundle!.loadString('assets/ahades/${index}.txt');
+    String file = await rootBundle.loadString('assets/ahades/${index}.txt');
     List<String> hLines = file.split('\n');
     hadethData = hLines;
     print(hLines);
