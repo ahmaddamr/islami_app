@@ -38,7 +38,7 @@ class _SurahDetailsState extends State<SurahDetails> {
               args.name,
               style: GoogleFonts.elMessiri(fontSize: 30, color: Colors.black),
             ),
-            iconTheme: IconThemeData(color: Colors.black),
+            iconTheme: const IconThemeData(color: Colors.black),
           ),
           body: ListView.separated(
             separatorBuilder: (context, index) {

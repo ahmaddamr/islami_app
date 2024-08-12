@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/core/theme.dart';
+import 'package:islami_app/data/local/cache_helper.dart';
 import 'package:islami_app/provider/my_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -10,14 +11,14 @@ class BottomSheetTheme extends StatelessWidget {
   Widget build(BuildContext context) {
     var provider = Provider.of<MyProvider>(context);
     
-    var color = provider.isDarkMode ? Colors.white : Colors.black;
+    var color = provider.isDarkMode ? Colors.black : MyThemeData.primaryColor;
     return Container(
       padding: const EdgeInsets.all(15),
       child: Column(
         children: [
           Row(
             children: [
-              Text(provider.isDarkMode ? 'Dark Mode' : 'Light Mode',),
+              Text(provider.isDarkMode ? 'Dark Mode' : 'Light Mode',style:TextStyle(color: color)),
               const SizedBox(
                 width: 20,
               ),
@@ -25,6 +26,7 @@ class BottomSheetTheme extends StatelessWidget {
                 value: provider.isDarkMode,
                 onChanged: (value) {
                   provider.toggleTheme(value);
+                  CacheHelper.saveData(key: 'theme', value: value);
                 },
               )
             ],

@@ -29,16 +29,15 @@ class BottomSheetLang extends StatelessWidget {
                 width: 30,
               ),
               IconButton(
-                onPressed: () {
-                  provider.changeLanguage('en');
-                },
-                icon: Icon(
-                  Icons.done_outline_rounded,
-                  color: provider.language == 'en'
-                      ? MyThemeData.primaryColor
-                      : MyThemeData.SecondColor,
-                ),
-              )
+                  onPressed: () {
+                    provider.changeLanguage('en');
+                  },
+                  icon: Icon(
+                    Icons.done_outline_rounded,
+                    color: provider.language == 'en'
+                        ? MyThemeData.primaryColor
+                        : MyThemeData.SecondColor,
+                  ),)
             ],
           ),
           const Divider(
@@ -59,17 +58,16 @@ class BottomSheetLang extends StatelessWidget {
                 width: 42,
               ),
               IconButton(
-                onPressed: () {
-                  provider.changeLanguage('ar');
-                  const Icon(Icons.check_box);
-                },
-                icon: Icon(
-                  Icons.done_outline_rounded,
-                  color: provider.language == 'ar'
-                      ? MyThemeData.primaryColor
-                      : MyThemeData.SecondColor,
-                ),
-              )
+                  onPressed: () {
+                    provider.changeLanguage('ar');
+                    const Icon(Icons.check_box);
+                  },
+                  icon: Icon(
+                    Icons.done_outline_rounded,
+                    color: provider.language == 'ar'
+                        ? MyThemeData.primaryColor
+                        : MyThemeData.SecondColor,
+                  ),)
             ],
           )
         ],
